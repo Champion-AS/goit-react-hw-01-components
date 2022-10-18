@@ -8,9 +8,6 @@ function Profile({
   location,
   avatar,
   stats,
-  followers,
-  views,
-  likes
 }) {
   return (
     <div className={css.profile}>
@@ -18,19 +15,19 @@ function Profile({
         <img src={avatar} alt={username} className={css.avatar} />
         <p className={css.name}> {username}</p>
         <p className={css.tag}>{tag} </p>
-        <p className={css.plocation}>{location}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
       <ul className={css.stats}>
-        <li>
+        <li className={css.list}>
           <span className={css.label}>Followers</span>
           <span className={css.quantity}>{stats.followers}</span>
         </li>
-        <li>
+        <li className={css.list}>
           <span className={css.label}>Views </span>
           <span className={css.quantity}>{stats.views}</span>
         </li>
-        <li>
+        <li className={css.list}>
           <span className={css.label}>Likes</span>
           <span className={css.quantity}>{stats.likes}</span>
         </li>
@@ -38,8 +35,8 @@ function Profile({
     </div>
   );
 }
-export default Profile;
-    Profile.propTypes = {
+
+  Profile.propTypes = {
   avatar: PropTypes.string,
   username: PropTypes.string,
   tag: PropTypes.string,
@@ -49,3 +46,4 @@ export default Profile;
   likes: PropTypes.number,
 };
 
+export default Profile;
